@@ -42,5 +42,20 @@ a {
     align-items: center;
 }
 
-a:hover {background:rgb(91, 207, 207);}
-a:active {background:rgb(2, 139, 139);}
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+    text-align: center;
+    opacity: 0;
+    transition: 1s;
+}
+
+[data-tooltip]:hover::after {
+    background: rgb(2, 116, 116);
+    opacity: 1;
+}
